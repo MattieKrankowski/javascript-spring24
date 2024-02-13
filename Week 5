@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Menu</title>
+<style>
+  /* Basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  #menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+  }
+  .menu-item {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .menu-item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  .menu-item a {
+    color: #333;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>Restaurant Menu</h1>
+
+<ul id="menu"></ul>
+
+<script>
+// Create an array to hold menu items
+const menuItems = [
+  ["https://example.com/item1", "Pizza", "https://media.istockphoto.com/id/184928432/photo/pizza-from-the-top-pepperoni-cheese.jpg?s=612x612&w=0&k=20&c=wkC4yrZLcvHqg-9kQtRb1wan_z15eiO1Z297OFSuxpg=", "Delicious pizza topped with cheese and pepperoni"],
+  ["https://example.com/item2", "Burger", "https://www.allrecipes.com/thmb/_OKqViGmlNaa9GV_c4cpwpwApGk=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/25473-the-perfect-basic-burger-DDMFS-4x3-56eaba3833fd4a26a82755bcd0be0c54.jpg", "Juicy beef burger with lettuce, tomato, and cheese"],
+  ["https://example.com/item3", "Salad", "https://www.acouplecooks.com/wp-content/uploads/2019/05/Chopped-Salad-001_1.jpg", "Fresh garden salad with mixed greens, tomatoes, and cucumbers"],
+  ["https://example.com/item4", "Pasta", "https://www.foodiecrush.com/wp-content/uploads/2020/05/Penne-Marinara-Sauce-foodiecrush.com-004.jpg", "Homemade pasta served with marinara sauce and parmesan cheese"],
+  ["https://example.com/item5", "Sushi", "https://thewoodenskillet.com/wp-content/uploads/2023/04/avocado-roll-sushi-7.jpg", "Assorted sushi rolls with fresh fish and avocado"]
+];
+
+// Get the UL element where the menu will be displayed
+const menu = document.getElementById('menu');
+
+// Loop through the menuItems array and create list items for each
+menuItems.forEach(item => {
+  // Create a list item
+  const li = document.createElement('li');
+  li.className = 'menu-item';
+  
+  // Create an image
+  const img = document.createElement('img');
+  img.src = item[2]; // Image URL
+  img.alt = item[1]; // Alt text
+  li.appendChild(img);
+  
+  // Create a link
+  const a = document.createElement('a');
+  a.href = item[0]; // URL
+  a.textContent = item[1]; // Displayed text
+  li.appendChild(a);
+  
+  // Add description
+  const description = document.createElement('p');
+  description.textContent = item[3]; // Description
+  li.appendChild(description);
+  
+  // Append the list item to the menu
+  menu.appendChild(li);
+});
+</script>
+
+</body>
+</html>
+
+    
+
+ 
