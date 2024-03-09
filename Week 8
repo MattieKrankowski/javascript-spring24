@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Manipulation</title>
+<style>
+  /* CSS for bonus task */
+  .color {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border: 1px solid black;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<h1>Array Manipulation</h1>
+<div id="output"></div>
+
+<script>
+  // Create an array
+  let myArray = ["apple", "banana", "cherry"];
+  document.getElementById("output").innerHTML += "Original array: " + myArray.join(", ") + "<br>";
+
+  // Add three values to the array
+  myArray.push("date", "elderberry", "fig");
+  document.getElementById("output").innerHTML += "Array after adding values: " + myArray.join(", ") + "<br>";
+
+  // Sort the array
+  myArray.sort();
+  document.getElementById("output").innerHTML += "Sorted array: " + myArray.join(", ") + "<br>";
+
+  // Remove one item
+  myArray.pop();
+  document.getElementById("output").innerHTML += "Array after removing one item: " + myArray.join(", ") + "<br>";
+
+  // Display the second item
+  document.getElementById("output").innerHTML += "Second item in the array: " + myArray[1] + "<br>";
+
+  // Use substring to modify the array
+  let modifiedArray = myArray[0].substring(0, 3);
+  document.getElementById("output").innerHTML += "Modified array: " + modifiedArray + "<br>";
+
+  // Bonus: Display array using loop and values for CSS styling
+  let colors = ["red", "green", "blue"];
+  for (let color of colors) {
+    document.getElementById("output").innerHTML += `<div class="color" style="background-color: ${color};"></div>`;
+  }
+</script>
+</body>
+</html>
